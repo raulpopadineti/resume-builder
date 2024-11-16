@@ -92,8 +92,7 @@ export default function Component() {
             <header className="mb-8">
               <h1 className="mb-4 text-4xl font-bold">Jason Chang</h1>
               <p className="max-w-[500px] text-sm font-semibold">
-                I work with founders to design and ship timeless
-                products.
+                I work with founders to design and ship timeless products.
               </p>
               <div className="mb-4 text-sm flex items-center gap-2">
                 <span>Product Designer</span>
@@ -102,7 +101,7 @@ export default function Component() {
                 <span className="text-xs font-medium">|</span>
                 <span>jason@jchang.cc</span>
               </div>
-              
+
               <div>
                 <span className="text-sm font-semibold">Design </span>
                 <span className="text-sm font-medium text-muted-foreground">
@@ -125,7 +124,12 @@ export default function Component() {
                   Education
                 </h2>
                 <div>
-                  <h3 className="text-sm font-semibold">Carnegie Mellon University <span className="font-medium text-muted-foreground">2015 - 2018</span></h3>
+                  <h3 className="text-sm font-semibold">
+                    Carnegie Mellon University{" "}
+                    <span className="font-medium text-muted-foreground">
+                      2015 - 2018
+                    </span>
+                  </h3>
                   <p className="text-sm">B.S. in Information Systems</p>
                 </div>
               </section>
@@ -140,7 +144,7 @@ export default function Component() {
                 <div className="space-y-6">
                   <Experience
                     title="Product Designer at Gumroad (Antiwork)"
-                    period="2024 – Present | Contract" 
+                    period="2024 – Present | Contract"
                     bullets={[
                       "Working with other designers to help various clients conduct research and design better UX",
                       "Tasks vary from web apps and websites to branding materials",
@@ -153,8 +157,8 @@ export default function Component() {
                     bullets={[
                       "Lead design for all aspects of user experience for Procreate's digital platforms",
                       "Advise on product design and brand architecture",
-                    //   "Launched new flagship animation app, Procreate Dreams",
-                    //   "Launched new Help Center site and redesigned many aspects of our marketing site"
+                      //   "Launched new flagship animation app, Procreate Dreams",
+                      //   "Launched new Help Center site and redesigned many aspects of our marketing site"
                     ]}
                   />
 
@@ -196,15 +200,15 @@ export default function Component() {
                       title="NFL+"
                       period="2022"
                       bullets={[
-                        "Supported the launch of NFL's new streaming service, NFL+. Tasks include identity design, creating key art, and designing a new landing page. Visit at nfl.com/plus/learn-more"
+                        "Supported the launch of NFL's new streaming service, NFL+. Tasks include identity design, creating key art, and designing a new landing page. Visit at nfl.com/plus/learn-more",
                       ]}
                     />
 
                     <Experience
-                      title="HITT Contracting" 
+                      title="HITT Contracting"
                       period="2022"
                       bullets={[
-                        "A website redesign for a big general contractor. We helped set them apart from the competition and meet a new demand for talent. Visit at hitt.com"
+                        "A website redesign for a big general contractor. We helped set them apart from the competition and meet a new demand for talent. Visit at hitt.com",
                       ]}
                     />
                   </div>
