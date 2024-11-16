@@ -1,28 +1,29 @@
-'use client'
+"use client";
 
-import * as React from 'react'
-import { useRef } from 'react'
-import { useReactToPrint } from 'react-to-print'
-import { Button } from '@/components/ui/button'
+import * as React from "react";
+import { useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { FileDown, Moon, Sun } from 'lucide-react'
+} from "@/components/ui/dropdown-menu";
+import { ArrowDownToLine, Moon, Sun } from "lucide-react";
+import { Experience } from "@/components/Experience";
 
 export default function Component() {
-  const [darkMode, setDarkMode] = React.useState(false)
-  const [paperSize, setPaperSize] = React.useState<'letter' | 'a4'>('letter')
-  const componentRef = useRef<HTMLDivElement>(null)
+  const [darkMode, setDarkMode] = React.useState(false);
+  const [paperSize, setPaperSize] = React.useState<"letter" | "a4">("letter");
+  const componentRef = useRef<HTMLDivElement>(null);
 
   const handlePrint = useReactToPrint({
     documentTitle: "resume",
     contentRef: componentRef,
     pageStyle: `
       @page {
-        size: ${paperSize === 'letter' ? '215.9mm 279.4mm' : '210mm 297mm'};
+        size: ${paperSize === "letter" ? "215.9mm 279.4mm" : "210mm 297mm"};
         margin: 0;
       }
       @media print {
@@ -32,43 +33,47 @@ export default function Component() {
       }
     `,
     onPrintError: (error) => console.log(error),
-    onAfterPrint: () => console.log('Printed successfully'),
+    onAfterPrint: () => console.log("Printed successfully"),
   });
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
+    setDarkMode(!darkMode);
+  };
 
   const handlePrintClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     handlePrint();
-  }
+  };
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={darkMode ? "dark" : ""}>
       <div className="min-h-screen bg-background text-foreground">
         {/* Controls */}
         <div className="fixed right-4 top-4 flex gap-2">
           <Button variant="outline" size="icon" onClick={toggleDarkMode}>
-            {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+            {darkMode ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline">
-                {paperSize === 'letter' ? 'US Letter' : 'A4'}
+                {paperSize === "letter" ? "US Letter" : "A4"}
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem onClick={() => setPaperSize('letter')}>
+              <DropdownMenuItem onClick={() => setPaperSize("letter")}>
                 US Letter
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => setPaperSize('a4')}>
+              <DropdownMenuItem onClick={() => setPaperSize("a4")}>
                 A4
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
           <Button onClick={handlePrintClick}>
-            <FileDown className="mr-2 h-4 w-4" />
+            <ArrowDownToLine className="h-4 w-4" />
             Export PDF
           </Button>
         </div>
@@ -77,106 +82,123 @@ export default function Component() {
         <div className="mx-auto p-8">
           <div
             ref={componentRef}
-            className={`mx-auto bg-background p-20 border-2 border-gray-200 dark:border-gray-800 print:border-0 ${
-              paperSize === 'letter'
-                ? 'h-[279.4mm] w-[215.9mm]'
-                : 'h-[297mm] w-[210mm]'
+            className={`mx-auto bg-background p-12 border-2 border-gray-200 dark:border-gray-800 rounded-xl shadow-lg print:border-0 print:shadow-none ${
+              paperSize === "letter"
+                ? "h-[279.4mm] w-[215.9mm]"
+                : "h-[297mm] w-[210mm]"
             }`}
           >
             {/* Header */}
             <header className="mb-8">
-              <h1 className="mb-2 text-4xl font-bold">Jason Chang</h1>
-              <div className="mb-4 flex items-center gap-2 text-muted-foreground">
+              <h1 className="mb-4 text-4xl font-bold">Jason Chang</h1>
+              <div className="mb-1 text-sm font-medium flex items-center gap-2">
                 <span>Product Designer</span>
-                <span>•</span>
-                <span>jchang.cc [password: day&night]</span>
-                <span>•</span>
+                <span className="text-xs font-medium">|</span>
+                <span>jchang.cc (day&night)</span>
+                <span className="text-xs font-medium">|</span>
                 <span>jason@jchang.cc</span>
               </div>
-              <p className="max-w-2xl text-muted-foreground">
-                A product designer passionate about engineering timeless experiences.
+              <p className="max-w-[500px] text-sm font-medium text-muted-foreground">
+                I work with founders and developers to design and ship timeless
+                products.
               </p>
             </header>
 
-            <div className="grid grid-cols-[2fr_1.2fr] gap-16">
+            <div className="mb-8 border-b border-gray-200 dark:border-gray-800" />
+
+            <div className="space-y-8 mb-8">
               <section>
-                <h2 className="mb-2 text-lg font-semibold">Experience</h2>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-medium">Product Designer at La Visual</h3>
-                    <p className="mb-2 text-sm text-muted-foreground">
-                      2022 - NOW
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Working with other designers to help various clients conduct research and
-                      design better UX. Tasks vary from web apps and websites to branding materials.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="font-medium">UI/UX Designer at Huemor</h3>
-                    <p className="mb-2 text-sm text-muted-foreground">
-                      2019 - 2022
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Collaborated closely with many clients on website designs by understanding
-                      their business goals and user personas. Tasks included wireframing, QA, and
-                      building sites in Wordpress.
-                    </p>
-                  </div>
+                <h2 className="mb-2 text-md font-semibold text-muted-foreground">
+                  Education
+                </h2>
+                <div>
+                  <h3 className="text-sm font-semibold">Carnegie Mellon University</h3>
+                  <p className="text-sm text-muted-foreground">B.S. in Information Systems</p>
+                  <p className="text-sm text-muted-foreground">2015 - 2018</p>
                 </div>
+              </section>
+            </div>
 
-                <h2 className="mb-2 mt-12 text-lg font-semibold">Projects</h2>
-                
+            <div className="grid grid-cols-[1fr_1fr] gap-20">
+              <section>
+                <h2 className="mb-2 text-md font-semibold text-muted-foreground">
+                  Experience
+                </h2>
+
                 <div className="space-y-6">
-                  <div>
-                    <h3 className="font-medium">Sagent Lending</h3>
-                    <p className="mb-2 text-sm text-muted-foreground">
-                      ONGOING
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Assisting a loan-servicing fintech company with designing and shipping a white-
-                      label platform sold to big banks. Created design systems and prototypes.
-                    </p>
-                  </div>
+                  <Experience
+                    title="Product Designer at Gumroad (Antiwork)"
+                    period="2024 – Present"
+                    bullets={[
+                      "Working with other designers to help various clients conduct research and design better UX",
+                      "Tasks vary from web apps and websites to branding materials",
+                    ]}
+                  />
 
-                  <div>
-                    <h3 className="font-medium">NFL+</h3>
-                    <p className="mb-2 text-sm text-muted-foreground">
-                      2022
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Supported the launch of NFL's new streaming service, NFL+. Tasks include
-                      identity design, creating key art, and designing a new landing page. Visit at
-                      nfl.com/plus/learn-more
-                    </p>
-                  </div>
+                  <Experience
+                    title="UI/UX Designer at Procreate"
+                    period="2023 – Present"
+                    bullets={[
+                      "Working with other designers to help various clients conduct research and design better UX",
+                      "Tasks vary from web apps and websites to branding materials",
+                    ]}
+                  />
 
-                  <div>
-                    <h3 className="font-medium">HITT Contracting</h3>
-                    <p className="mb-2 text-sm text-muted-foreground">
-                      2022
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      A website redesign for a big general contractor. We helped set them apart from
-                      the competition and meet a new demand for talent. Visit at hitt.com
-                    </p>
-                  </div>
+                  <Experience
+                    title="Product Designer at La Visual"
+                    period="2022 – 2023"
+                    bullets={[
+                      "Working with other designers to help various clients conduct research and design better UX",
+                      "Tasks vary from web apps and websites to branding materials",
+                    ]}
+                  />
+
+                  <Experience
+                    title="UI/UX Designer at Huemor"
+                    period="2019 – 2022"
+                    bullets={[
+                      "Worked with a team of developers to design and ship a wide range of websites for clients in the tech, construction, and many other industries.",
+                    ]}
+                  />
                 </div>
               </section>
 
               <div className="space-y-8">
                 <section>
-                  <h2 className="mb-2 text-lg font-semibold">Education</h2>
-                  <div>
-                    <h3 className="font-medium">Carnegie Mellon University</h3>
-                    <p className="mb-1 text-sm text-muted-foreground">
-                      B.S. in Information Systems
-                    </p>
-                    <p className="text-sm text-muted-foreground">2015 - 2018</p>
+                  <h2 className="mb-2 text-md font-semibold text-muted-foreground">
+                    Projects
+                  </h2>
+
+                  <div className="space-y-6">
+                    <Experience
+                      title="Sagent Lending"
+                      period="ONGOING"
+                      bullets={[
+                        "Assisting a loan-servicing fintech company with designing and shipping a white-label platform sold to big banks. Created design systems and prototypes.",
+                      ]}
+                    />
+
+                    <Experience
+                      title="NFL+"
+                      period="2022"
+                      bullets={[
+                        "Supported the launch of NFL's new streaming service, NFL+. Tasks include identity design, creating key art, and designing a new landing page. Visit at nfl.com/plus/learn-more"
+                      ]}
+                    />
+
+                    <Experience
+                      title="HITT Contracting" 
+                      period="2022"
+                      bullets={[
+                        "A website redesign for a big general contractor. We helped set them apart from the competition and meet a new demand for talent. Visit at hitt.com"
+                      ]}
+                    />
                   </div>
                 </section>
+              </div>
+
+              <div className="space-y-8">
+                
 
                 <section>
                   <h2 className="mb-2 text-lg font-semibold">Skills & Tools</h2>
@@ -184,7 +206,8 @@ export default function Component() {
                     <div>
                       <h3 className="text-sm font-medium">Design</h3>
                       <p className="text-sm text-muted-foreground">
-                        Product Design, Interaction Design, Graphic Design, Design Sketching, Illustration
+                        Product Design, Interaction Design, Graphic Design,
+                        Design Sketching, Illustration
                       </p>
                     </div>
                     <div>
@@ -207,5 +230,5 @@ export default function Component() {
         </div>
       </div>
     </div>
-  )
+  );
 }
