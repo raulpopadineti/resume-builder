@@ -82,7 +82,7 @@ export default function Component() {
         <div className="mx-auto p-8">
           <div
             ref={componentRef}
-            className={`mx-auto bg-background p-12 border-2 border-gray-200 dark:border-gray-800 rounded-xl shadow-lg print:border-0 print:shadow-none ${
+            className={`mx-auto bg-background p-16 border-2 border-gray-200 dark:border-gray-800 rounded-xl shadow-lg print:border-0 print:shadow-none ${
               paperSize === "letter"
                 ? "h-[279.4mm] w-[215.9mm]"
                 : "h-[297mm] w-[210mm]"
@@ -90,19 +90,25 @@ export default function Component() {
           >
             {/* Header */}
             <header className="mb-8">
-              <h1 className="mb-4 text-4xl font-bold">Jason Chang</h1>
-              <p className="max-w-[500px] text-sm font-semibold">
-                I work with founders to design and ship timeless products.
+              <h1 className="mb-2 text-4xl font-semibold tracking-tight">
+                Jason Chang
+              </h1>
+              <p className="max-w-[650px] text-sm font-medium mb-1">
+                I'm a product designer working with founders to
+                design and ship timeless products.
               </p>
               <div className="mb-4 text-sm flex items-center gap-2">
-                <span>Product Designer</span>
+                <a href="https://jchang.cc" className="underline">
+                  jchang.cc
+                </a>{" "}
+                (password: day&night)
                 <span className="text-xs font-medium">|</span>
-                <span>jchang.cc (day&night)</span>
-                <span className="text-xs font-medium">|</span>
-                <span>jason@jchang.cc</span>
+                <a href="mailto:jason@jchang.cc" className="underline">
+                  jason@jchang.cc
+                </a>
               </div>
 
-              <div>
+              {/* <div>
                 <span className="text-sm font-semibold">Design </span>
                 <span className="text-sm font-medium text-muted-foreground">
                   Figma, Adobe Creative Suite, Blender
@@ -113,16 +119,14 @@ export default function Component() {
                 <span className="text-sm font-medium text-muted-foreground">
                   HTML/CSS, JavaScript, Python, Cursor
                 </span>
-              </div>
+              </div> */}
             </header>
 
-            <div className="mb-8 border-b border-gray-200 dark:border-gray-800" />
-
+            <div className="mb-8 border-b border-gray-300 dark:border-gray-800" />
+{/* 
             <div className="space-y-8 mb-8">
               <section>
-                <h2 className="mb-2 text-md font-semibold text-muted-foreground">
-                  Education
-                </h2>
+                <h2 className="mb-2 text-md font-bold">Education</h2>
                 <div>
                   <h3 className="text-sm font-semibold">
                     Carnegie Mellon University{" "}
@@ -133,21 +137,33 @@ export default function Component() {
                   <p className="text-sm">B.S. in Information Systems</p>
                 </div>
               </section>
-            </div>
+            </div> */}
 
             <div className="grid grid-cols-[1fr_1fr] gap-16 mb-8">
               <section>
-                <h2 className="mb-2 text-md font-semibold text-muted-foreground">
+                <div className="mb-8">
+                <h2 className="mb-4 text-base font-semibold">Education</h2>
+                <div>
+                  <h3 className="text-sm font-semibold">
+                    Carnegie Mellon University{" "}
+                    <span className="font-medium text-muted-foreground">
+                      2015 - 2018
+                    </span>
+                  </h3>
+                  <p className="text-sm">B.S. in Information Systems</p>
+                </div>
+                </div>
+                <h2 className="mb-4 text-base font-semibold">
                   Experience
                 </h2>
 
-                <div className="space-y-6">
+                <div className="space-y-5">
                   <Experience
                     title="Product Designer at Gumroad (Antiwork)"
                     period="2024 – Present | Contract"
                     bullets={[
-                      "Working with other designers to help various clients conduct research and design better UX",
-                      "Tasks vary from web apps and websites to branding materials",
+                      "Worked with Sahil, the CEO, to ship features for 3 of Antiwork's products, Gumroad, Flexile, and Helper.",
+                      "Built designs in Figma and shipped directly in code to millions of users.",
                     ]}
                   />
 
@@ -155,8 +171,8 @@ export default function Component() {
                     title="UI/UX Designer at Procreate"
                     period="2023 – Present"
                     bullets={[
-                      "Lead design for all aspects of user experience for Procreate's digital platforms",
-                      "Advise on product design and brand architecture",
+                      "Lead design for all aspects of user experience for Procreate's digital platforms, used by millions worldwide.",
+                      "Advise regularly on product design and brand architecture.",
                       //   "Launched new flagship animation app, Procreate Dreams",
                       //   "Launched new Help Center site and redesigned many aspects of our marketing site"
                     ]}
@@ -166,8 +182,8 @@ export default function Component() {
                     title="Product Designer at La Visual"
                     period="2022 – 2023"
                     bullets={[
-                      "Working with other designers to help various clients conduct research and design better UX",
-                      "Tasks vary from web apps and websites to branding materials",
+                      "Designed digital products with various clients focusing on brand identity and intuitive user experiences.",
+                      "Notable clients include the NFL, Sagent Lending, and the U.S. Department of Education.",
                     ]}
                   />
 
@@ -175,43 +191,74 @@ export default function Component() {
                     title="UI/UX Designer at Huemor"
                     period="2019 – 2022"
                     bullets={[
-                      "Designed and shipped websites for clients in tech, construction, and many other industries.",
+                      "Shipped websites for numerous clients ranging across tech, construction, and many other industries.",
                     ]}
                   />
                 </div>
               </section>
 
               <div className="space-y-8">
-                <section>
-                  <h2 className="mb-2 text-md font-semibold text-muted-foreground">
-                    Projects
+              <div className="space-y-2">
+                  <h2 className="mb-4 text-md font-semibold">
+                    Skills & Tools
                   </h2>
+                  <p className="text-sm">Figma, Adobe Creative Suite, Blender, HTML/CSS, JavaScript, Python, Cursor</p>
+                </div>
+                <section>
+                    <div className="mb-8">
+                        <h2 className="mb-4 text-base font-semibold">Projects</h2>
 
-                  <div className="space-y-6">
-                    <Experience
-                      title="Sagent Lending"
-                      period="ONGOING"
-                      bullets={[
-                        "Assisting a loan-servicing fintech company with designing and shipping a white-label platform sold to big banks. Created design systems and prototypes.",
-                      ]}
-                    />
+                        <div className="space-y-5">
+                        <Experience
+                            title="Procreate Marketing Site Redesign"
+                            period="2024"
+                            bullets={[
+                            "Redesigned Procreate's marketing site, notably the homepage, careers page, and product pages, in preparation for Procreate's unprecedented spotlight on the world stage in Apple's iPad Keynote in May 2024.",
+                            ]}
+                            variant="paragraph"
+                        />
 
-                    <Experience
-                      title="NFL+"
-                      period="2022"
-                      bullets={[
-                        "Supported the launch of NFL's new streaming service, NFL+. Tasks include identity design, creating key art, and designing a new landing page. Visit at nfl.com/plus/learn-more",
-                      ]}
-                    />
+                        <Experience
+                            title="Open Source Gumroad's Design System"
+                            period="2024"
+                            bullets={[
+                            "Published Gumroad's design system to the public to support open sourcing Gumroad.",
+                            ]}
+                            variant="paragraph"
+                        />
 
-                    <Experience
-                      title="HITT Contracting"
-                      period="2022"
-                      bullets={[
-                        "A website redesign for a big general contractor. We helped set them apart from the competition and meet a new demand for talent. Visit at hitt.com",
-                      ]}
-                    />
-                  </div>
+                        <Experience
+                            title="Procreate Dreams Reveal and Launch"
+                            period="2023"
+                            bullets={[
+                            "Designed all digital marketing experiences for the launch of Procreate Dreams, the new flagship animation app from Procreate.",
+                            ]}
+                            variant="paragraph"
+                        />
+
+                        <Experience
+                            title="Procreate Help Center Launch"
+                            period="2023"
+                            bullets={[
+                            "Designed and launched a new Help Center for Procreate users to help build a community and find the resources they need.",
+                            ]}
+                            variant="paragraph"
+                        />
+
+                        <Experience
+                            title="NFL+"
+                            period="2022"
+                            bullets={[
+                            "Designed the landing page experience and branding for the NFL's all-new streaming platform, NFL+.",
+                            ]}
+                            variant="paragraph"
+                        />
+                        
+                        </div>
+                    </div>
+                  
+                  
+                  
                 </section>
               </div>
             </div>
