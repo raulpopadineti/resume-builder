@@ -161,9 +161,17 @@ export default function Component() {
                     title="Senior Software Engineer at Gumroad (Antiwork)"
                     period="2021 – Present | Contract"
                     bullets={[
-                      "Built the initial version of Gumroad's content editor used by tens of thousands of creators daily.",
+                      "Worked on Gumroad's content editor used by tens of thousands of creators daily.",
                       "Developed and delivered Gumroad's Year in Review email to over 50,000 creators.",
                       "Developed and shipped Flexile's IRS tax filing feature, ensuring compliance for over 1,500 US and foreign investors and contractors.",
+                    ]}
+                  />
+
+                  <Experience
+                    title="Founder & CEO at Sunergos"
+                    period="2017 – Present | Full-time"
+                    bullets={[
+                      "Founded and bootstrapped a software company developing impactful solutions for remote teams and local communities.",
                     ]}
                   />
 
@@ -219,9 +227,7 @@ export default function Component() {
                       <Experience
                         title="Fair Remote"
                         period="2021"
-                        bullets={[
-                          "A transparent remote jobs board.",
-                        ]}
+                        bullets={["A transparent remote jobs board."]}
                         variant="paragraph"
                       />
 
