@@ -91,20 +91,21 @@ export default function Component() {
             {/* Header */}
             <header className="mb-8">
               <h1 className="mb-2 text-4xl font-semibold tracking-tight">
-                Jason Chang
+                Raul Popadineți
               </h1>
               <p className="max-w-[650px] text-sm font-medium mb-1">
-                I'm a product designer working with founders to
-                design and ship timeless products.
+                I'm a senior software engineer with over a decade of experience
+                developing and maintaining web applications serving millions of
+                users.
               </p>
               <div className="mb-4 text-sm flex items-center gap-2">
-                <a href="https://jchang.cc" className="underline">
-                  jchang.cc
+                <a href="https://raulp.co" className="underline">
+                  raulp.co
                 </a>{" "}
-                (password: day&night)
+                (password: light&dark)
                 <span className="text-xs font-medium">|</span>
-                <a href="mailto:jason@jchang.cc" className="underline">
-                  jason@jchang.cc
+                <a href="mailto:raulp@hey.com" className="underline">
+                  raulp@hey.com
                 </a>
               </div>
 
@@ -123,7 +124,7 @@ export default function Component() {
             </header>
 
             <div className="mb-8 border-b border-gray-300 dark:border-gray-800" />
-{/* 
+            {/* 
             <div className="space-y-8 mb-8">
               <section>
                 <h2 className="mb-2 text-md font-bold">Education</h2>
@@ -142,123 +143,116 @@ export default function Component() {
             <div className="grid grid-cols-[1fr_1fr] gap-16 mb-8">
               <section>
                 <div className="mb-8">
-                <h2 className="mb-4 text-base font-semibold">Education</h2>
-                <div>
-                  <h3 className="text-sm font-semibold">
-                    Carnegie Mellon University{" "}
-                    <span className="font-medium text-muted-foreground">
-                      2015 - 2018
-                    </span>
-                  </h3>
-                  <p className="text-sm">B.S. in Information Systems</p>
+                  <h2 className="mb-4 text-base font-semibold">Education</h2>
+                  <div>
+                    <h3 className="text-sm font-semibold">
+                      Politehnica Timișoara University{" "}
+                      <span className="font-medium text-muted-foreground">
+                        2008 - 2012
+                      </span>
+                    </h3>
+                    <p className="text-sm">B.S. in Computer Science</p>
+                  </div>
                 </div>
-                </div>
-                <h2 className="mb-4 text-base font-semibold">
-                  Experience
-                </h2>
+                <h2 className="mb-4 text-base font-semibold">Experience</h2>
 
                 <div className="space-y-5">
                   <Experience
-                    title="Product Designer at Gumroad (Antiwork)"
-                    period="2024 – Present | Contract"
+                    title="Senior Software Engineer at Gumroad (Antiwork)"
+                    period="2021 – Present | Contract"
                     bullets={[
-                      "Worked with Sahil, the CEO, to ship features for 3 of Antiwork's products, Gumroad, Flexile, and Helper.",
-                      "Built designs in Figma and shipped directly in code to millions of users.",
+                      "Built the initial version of Gumroad's content editor used by tens of thousands of creators daily.",
+                      "Developed and delivered Gumroad's Year in Review email to over 50,000 creators.",
+                      "Developed and shipped Flexile's IRS tax filing feature, ensuring compliance for over 1,500 US and foreign investors and contractors.",
                     ]}
                   />
 
                   <Experience
-                    title="UI/UX Designer at Procreate"
-                    period="2023 – Present"
+                    title="Team Lead & Senior Software Engineer at Hubstaff"
+                    period="2015 – 2020 | Contract"
                     bullets={[
-                      "Lead design for all aspects of user experience for Procreate's digital platforms, used by millions worldwide.",
-                      "Advise regularly on product design and brand architecture.",
-                      //   "Launched new flagship animation app, Procreate Dreams",
-                      //   "Launched new Help Center site and redesigned many aspects of our marketing site"
+                      "Led a team of 6 engineers to build and maintain Hubstaff's flagship product, a time tracking and invoicing platform used by over 100,000 users.",
                     ]}
                   />
 
                   <Experience
-                    title="Product Designer at La Visual"
-                    period="2022 – 2023"
+                    title="Cofounder & Software Engineer at Codenapse"
+                    period="2012 – 2015 | Full-time"
                     bullets={[
-                      "Designed digital products with various clients focusing on brand identity and intuitive user experiences.",
-                      "Notable clients include the NFL, Sagent Lending, and the U.S. Department of Education.",
-                    ]}
-                  />
-
-                  <Experience
-                    title="UI/UX Designer at Huemor"
-                    period="2019 – 2022"
-                    bullets={[
-                      "Shipped websites for numerous clients ranging across tech, construction, and many other industries.",
+                      "Delivered and shipped custom software solutions to clients in the US and Europe.",
                     ]}
                   />
                 </div>
               </section>
 
               <div className="space-y-8">
-              <div className="space-y-2">
-                  <h2 className="mb-4 text-md font-semibold">
-                    Skills & Tools
-                  </h2>
-                  <p className="text-sm">Figma, Adobe Creative Suite, Blender, HTML/CSS, JavaScript, Python, Cursor</p>
+                <div className="space-y-2">
+                  <h2 className="mb-4 text-md font-semibold">Skills & Tools</h2>
+                  <p className="text-sm">
+                    HTML/CSS, JavaScript, Vue, React, Hotwire, Next.js, Ruby,
+                    Rails, PostgreSQL, MySQL, Prisma, Heroku, AWS, CI/CD, Ionic
+                  </p>
                 </div>
                 <section>
-                    <div className="mb-8">
-                        <h2 className="mb-4 text-base font-semibold">Projects</h2>
+                  <div className="mb-8">
+                    <h2 className="mb-4 text-base font-semibold">Projects</h2>
 
-                        <div className="space-y-5">
-                        <Experience
-                            title="Procreate Marketing Site Redesign"
-                            period="2024"
-                            bullets={[
-                            "Redesigned Procreate's marketing site, notably the homepage, careers page, and product pages, in preparation for Procreate's unprecedented spotlight on the world stage in Apple's iPad Keynote in May 2024.",
-                            ]}
-                            variant="paragraph"
-                        />
+                    <div className="space-y-5">
+                      <Experience
+                        title="Git Digest"
+                        period="2024"
+                        bullets={[
+                          "Code changes explained for team leaders and founders, sent directly to their inboxes.",
+                        ]}
+                        variant="paragraph"
+                      />
 
-                        <Experience
-                            title="Open Source Gumroad's Design System"
-                            period="2024"
-                            bullets={[
-                            "Published Gumroad's design system to the public to support open sourcing Gumroad.",
-                            ]}
-                            variant="paragraph"
-                        />
+                      <Experience
+                        title="Econub"
+                        period="2021 - Present"
+                        bullets={[
+                          "The most curated recycling map of Timișoara.",
+                        ]}
+                        variant="paragraph"
+                      />
 
-                        <Experience
-                            title="Procreate Dreams Reveal and Launch"
-                            period="2023"
-                            bullets={[
-                            "Designed all digital marketing experiences for the launch of Procreate Dreams, the new flagship animation app from Procreate.",
-                            ]}
-                            variant="paragraph"
-                        />
+                      <Experience
+                        title="Fair Remote"
+                        period="2021"
+                        bullets={[
+                          "A transparent remote jobs board.",
+                        ]}
+                        variant="paragraph"
+                      />
 
-                        <Experience
-                            title="Procreate Help Center Launch"
-                            period="2023"
-                            bullets={[
-                            "Designed and launched a new Help Center for Procreate users to help build a community and find the resources they need.",
-                            ]}
-                            variant="paragraph"
-                        />
+                      <Experience
+                        title="Calm Companies"
+                        period="2021"
+                        bullets={[
+                          "A directory of companies that have a calm work culture.",
+                        ]}
+                        variant="paragraph"
+                      />
 
-                        <Experience
-                            title="NFL+"
-                            period="2022"
-                            bullets={[
-                            "Designed the landing page experience and branding for the NFL's all-new streaming platform, NFL+.",
-                            ]}
-                            variant="paragraph"
-                        />
-                        
-                        </div>
+                      <Experience
+                        title="Loripsum"
+                        period="2020"
+                        bullets={[
+                          "A simple Lorem Ipsum generator Homebrew command.",
+                        ]}
+                        variant="paragraph"
+                      />
+
+                      <Experience
+                        title="Quote of the Day"
+                        period="2018"
+                        bullets={[
+                          "A mobile app that shows a new contemplation idea every day.",
+                        ]}
+                        variant="paragraph"
+                      />
                     </div>
-                  
-                  
-                  
+                  </div>
                 </section>
               </div>
             </div>
